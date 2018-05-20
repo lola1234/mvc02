@@ -1,0 +1,19 @@
+<h1>View car</h1>
+
+<table class="table table-hover">
+	<?php
+		foreach($cars as $car)
+		{
+			$carfields = explode(',',$car);
+			echo'<tr>';
+			foreach($carfields as $field)
+			{
+				echo '<td>'.$field.'</td>';
+			}
+			echo '<td><a href="/?page=cars&action=delete&id='.$carfields[0].'">Delete</a></td>';
+			echo '<td><a href="/?page=cars&action=update&id='.$carfields[0].'">Update</a></td>';
+
+			echo'</tr>';
+		}
+	?>
+</table>
